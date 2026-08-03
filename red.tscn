@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://byk5206d2cuo8"]
+
+[ext_resource type="Texture2D" uid="uid://dp4yqgn6f125v" path="res://Sprites/Mobile - Angry Birds - Characters & Enemies - Birds (Tuomas Designs).png" id="1_gxcn4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fx4mt"]
+radius = 21.023796
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gxcn4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxcn4"]
+radius = 23.537205
+
+[node name="Red" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fx4mt")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_gxcn4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_gxcn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -1)
+texture = ExtResource("1_gxcn4")
+region_enabled = true
+region_rect = Rect2(50, 68, 46, 44)

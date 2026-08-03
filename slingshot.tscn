@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://7gsstb7qp2lq"]
+
+[ext_resource type="Texture2D" uid="uid://c1xgpapcci04m" path="res://Sprites/Browser Games - Angry Birds in The Hunt For The Golden Pistachio - Blocks - Slingshot.png" id="1_xykh3"]
+
+[node name="Slingshot" type="Node2D"]
+
+[node name="Part 1" type="Sprite2D" parent="."]
+position = Vector2(13, 9)
+texture = ExtResource("1_xykh3")
+region_enabled = true
+region_rect = Rect2(30, 0, 50, 200)
+
+[node name="Part 2" type="Sprite2D" parent="."]
+position = Vector2(-12, -2)
+texture = ExtResource("1_xykh3")
+region_enabled = true
+region_rect = Rect2(100, 0, 50, 200)

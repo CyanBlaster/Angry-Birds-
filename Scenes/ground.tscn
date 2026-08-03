@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ji4ob2114ol"]
+
+[ext_resource type="Texture2D" uid="uid://ceda4nir3yplt" path="res://Sprites/Mobile - Angry Birds - Backgrounds - Poached Eggs Theme 1.png" id="1_688p1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_688p1"]
+size = Vector2(1156, 36)
+
+[node name="ground" type="StaticBody2D"]
+
+[node name="ground" type="Sprite2D" parent="."]
+position = Vector2(567.6023, 141.35834)
+scale = Vector2(3.3958592, 3.3958602)
+texture = ExtResource("1_688p1")
+region_enabled = true
+region_rect = Rect2(1412, 145, 345, 310)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(574, 644)
+shape = SubResource("RectangleShape2D_688p1")
