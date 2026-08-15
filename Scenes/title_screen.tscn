@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://lialwndy5j3a"]
+
+[ext_resource type="Texture2D" uid="uid://ceda4nir3yplt" path="res://Sprites/Mobile - Angry Birds - Backgrounds - Poached Eggs Theme 1.png" id="1_4gxqj"]
+[ext_resource type="PackedScene" uid="uid://bwkwfjtch5xcq" path="res://Scenes/play_button.tscn" id="2_twnyg"]
+[ext_resource type="AudioStream" uid="uid://l7u4ffsjgjn2" path="res://Sounds/02. Angry Birds Theme.mp3" id="3_55kwv"]
+
+[node name="title screen" type="Node2D"]
+
+[node name="sky" type="Sprite2D" parent="."]
+position = Vector2(584.3334, 295.49997)
+scale = Vector2(2.3986392, 2.4033334)
+texture = ExtResource("1_4gxqj")
+region_enabled = true
+region_rect = Rect2(48, 145, 490, 300)
+
+[node name="ground" type="Sprite2D" parent="."]
+position = Vector2(580.5773, 37.641754)
+scale = Vector2(3.4285378, 3.989409)
+texture = ExtResource("1_4gxqj")
+region_enabled = true
+region_rect = Rect2(1412, 145, 345, 310)
+
+[node name="play button" parent="." instance=ExtResource("2_twnyg")]
+position = Vector2(567, 327)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_55kwv")
+autoplay = true

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck8sqji1mj0pt"]
+
+[ext_resource type="Texture2D" uid="uid://b5h8vrqcamdcf" path="res://Sprites/Mobile - Angry Birds - Characters & Enemies - Pigs (Tuomas Designs).png" id="1_f6dcl"]
+[ext_resource type="Script" uid="uid://bk06o1ms4jgq1" path="res://Scripts/pig.gd" id="1_rv4ua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv4ua"]
+radius = 25.019993
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6dcl"]
+radius = 25.70992
+
+[node name="Pig" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_rv4ua")
+
+[node name="pig" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("1_f6dcl")
+region_enabled = true
+region_rect = Rect2(52, 65, 50, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rv4ua")
+
+[node name="pig collision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pig collision"]
+shape = SubResource("CircleShape2D_f6dcl")
+
+[connection signal="body_entered" from="pig collision" to="." method="_on_area_2d_body_entered"]

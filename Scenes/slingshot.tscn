@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://7gsstb7qp2lq"]
+
+[ext_resource type="Script" uid="uid://cnfcvf0hqxk8r" path="res://Scripts/slingshot.gd" id="1_81g13"]
+[ext_resource type="Texture2D" uid="uid://c1xgpapcci04m" path="res://Sprites/Browser Games - Angry Birds in The Hunt For The Golden Pistachio - Blocks - Slingshot.png" id="1_xykh3"]
+[ext_resource type="Texture2D" uid="uid://dp4yqgn6f125v" path="res://Sprites/Mobile - Angry Birds - Characters & Enemies - Birds (Tuomas Designs).png" id="3_n7yu4"]
+[ext_resource type="Texture2D" uid="uid://bjh71hiecp6ga" path="res://Sprites/Targetting.png" id="4_n7yu4"]
+
+[node name="Slingshot" type="Node2D" node_paths=PackedStringArray("trajectory")]
+script = ExtResource("1_81g13")
+trajectory = NodePath("Trajectory")
+
+[node name="Part 1" type="Sprite2D" parent="."]
+position = Vector2(13, 9)
+texture = ExtResource("1_xykh3")
+region_enabled = true
+region_rect = Rect2(30, 0, 50, 200)
+
+[node name="Red Bird" type="Sprite2D" parent="."]
+position = Vector2(2, -60)
+texture = ExtResource("3_n7yu4")
+region_enabled = true
+region_rect = Rect2(50, 68, 46, 44)
+
+[node name="Part 2" type="Sprite2D" parent="."]
+position = Vector2(-12, -2)
+texture = ExtResource("1_xykh3")
+region_enabled = true
+region_rect = Rect2(100, 0, 50, 200)
+
+[node name="Trajectory" type="Sprite2D" parent="."]
+position = Vector2(35, -61.000008)
+rotation = -0.55676
+scale = Vector2(2.9375, 2.9375)
+texture = ExtResource("4_n7yu4")
+centered = false
+offset = Vector2(0, -16)

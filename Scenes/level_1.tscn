@@ -1,18 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3x6ypy31qdy5"]
+[gd_scene load_steps=10 format=3 uid="uid://b3x6ypy31qdy5"]
 
 [ext_resource type="Texture2D" uid="uid://ceda4nir3yplt" path="res://Sprites/Mobile - Angry Birds - Backgrounds - Poached Eggs Theme 1.png" id="1_8ffim"]
 [ext_resource type="PackedScene" uid="uid://b3ji4ob2114ol" path="res://Scenes/ground.tscn" id="2_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://7gsstb7qp2lq" path="res://slingshot.tscn" id="3_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://byk5206d2cuo8" path="res://red.tscn" id="4_7p6j4"]
-[ext_resource type="Script" uid="uid://dib56mrsmqkyp" path="res://red.gd" id="5_6444e"]
-[ext_resource type="PackedScene" uid="uid://b5w16ahoy6y05" path="res://wood_block.tscn" id="6_evi0p"]
-[ext_resource type="PackedScene" uid="uid://cjonp5x0ttfkx" path="res://small_wood_block.tscn" id="7_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://7gsstb7qp2lq" path="res://Scenes/slingshot.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://byk5206d2cuo8" path="res://Scenes/red.tscn" id="4_7p6j4"]
+[ext_resource type="Script" uid="uid://dib56mrsmqkyp" path="res://Scripts/red.gd" id="5_6444e"]
+[ext_resource type="PackedScene" uid="uid://b5w16ahoy6y05" path="res://Scenes/wood_block.tscn" id="6_evi0p"]
+[ext_resource type="PackedScene" uid="uid://cjonp5x0ttfkx" path="res://Scenes/small_wood_block.tscn" id="7_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://ck8sqji1mj0pt" path="res://Scenes/pig.tscn" id="8_xrdnt"]
+[ext_resource type="PackedScene" uid="uid://dsaldam1q1kgy" path="res://Scenes/wall.tscn" id="9_wrinw"]
 
 [node name="Level 1" type="Node2D"]
 
 [node name="sky" type="Sprite2D" parent="."]
-position = Vector2(570.7833, 304.49997)
-scale = Vector2(2.343333, 2.3433335)
+position = Vector2(574.8334, 304.5)
+scale = Vector2(2.359864, 2.3433335)
 texture = ExtResource("1_8ffim")
 region_enabled = true
 region_rect = Rect2(48, 145, 490, 300)
@@ -20,31 +22,39 @@ region_rect = Rect2(48, 145, 490, 300)
 [node name="ground" parent="." instance=ExtResource("2_xfk5q")]
 
 [node name="Slingshot" parent="." instance=ExtResource("3_xfk5q")]
-position = Vector2(190, 510)
+position = Vector2(190, 502)
 
 [node name="Red" parent="." instance=ExtResource("4_7p6j4")]
-position = Vector2(148, 584)
+position = Vector2(79, 570)
 script = ExtResource("5_6444e")
 
 [node name="wood" parent="." instance=ExtResource("6_evi0p")]
-position = Vector2(789, 366)
+position = Vector2(770, 524)
 turn = 1
 
 [node name="wood2" parent="." instance=ExtResource("6_evi0p")]
-position = Vector2(934, 367)
+position = Vector2(929, 525)
 turn = 1
 
 [node name="wood3" parent="." instance=ExtResource("6_evi0p")]
-position = Vector2(863, 253)
+position = Vector2(851, 411)
 rotation = 1.5707964
 
 [node name="small wood block" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(818, 148)
+position = Vector2(791, 322)
 rotation = 1.5707964
 
 [node name="small wood block2" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(906, 148)
+position = Vector2(908, 323)
 rotation = 1.5707964
 
 [node name="small wood block3" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(864, 50)
+position = Vector2(852, 229)
+
+[node name="Pig" parent="." instance=ExtResource("8_xrdnt")]
+position = Vector2(849, 374)
+
+[node name="wall" parent="." instance=ExtResource("9_wrinw")]
+
+[node name="wall2" parent="." instance=ExtResource("9_wrinw")]
+position = Vector2(1162, 0)

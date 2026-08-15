@@ -8,14 +8,15 @@
 size = Vector2(162, 18)
 
 [node name="small wood block" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 5
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_iw5qf")
-lock_rotation = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="small_wood" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q37lg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="small_wood2" type="Sprite2D" parent="."]
 texture = ExtResource("1_iw5qf")
 region_enabled = true
 region_rect = Rect2(312, 721, 166, 20)

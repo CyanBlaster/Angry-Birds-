@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://svhgn8a0780l"]
+
+[ext_resource type="Script" uid="uid://cn14k6a7m70pk" path="res://Scripts/red_bird.gd" id="1_40sds"]
+[ext_resource type="Texture2D" uid="uid://dp4yqgn6f125v" path="res://Sprites/Mobile - Angry Birds - Characters & Enemies - Birds (Tuomas Designs).png" id="1_pqbpl"]
+[ext_resource type="AudioStream" uid="uid://cduf1ud8y4q5q" path="res://Sounds/bird 01 flying.wav" id="3_3cvf8"]
+[ext_resource type="AudioStream" uid="uid://bfxe76pftao8g" path="res://Sounds/bird 01 collision a1.wav" id="4_m5cu5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jasw8"]
+radius = 19.235384
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40sds"]
+radius = 20.09975
+
+[node name="red_bird" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "sprite2", "battle_cry", "hurt_cry")]
+script = ExtResource("1_40sds")
+sprite = NodePath("hurt")
+sprite2 = NodePath("launched")
+battle_cry = NodePath("AudioStreamPlayer")
+hurt_cry = NodePath("AudioStreamPlayer2")
+
+[node name="idle" type="Sprite2D" parent="."]
+position = Vector2(-3, -1)
+texture = ExtResource("1_pqbpl")
+region_enabled = true
+region_rect = Rect2(50, 68, 46, 44)
+
+[node name="launched" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-3, -1)
+texture = ExtResource("1_pqbpl")
+region_enabled = true
+region_rect = Rect2(151, 68, 46, 44)
+
+[node name="hurt" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2, -1)
+texture = ExtResource("1_pqbpl")
+region_enabled = true
+region_rect = Rect2(254, 68, 46, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_jasw8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_40sds")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3cvf8")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m5cu5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
