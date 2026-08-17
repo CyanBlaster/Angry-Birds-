@@ -1,6 +1,6 @@
-extends Node2D
+extends RigidBody2D
 
-
+var health = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -8,13 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if(health <= 0):
+		queue_free()
 
 
-
-		
-
-
-func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
-	if(Input.is_action_just_pressed("click")):
-		global.play = true
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if(body.name == "red"):
+		health -= 1

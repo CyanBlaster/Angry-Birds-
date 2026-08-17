@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-#var launched = false
 @export var sprite : Sprite2D
 @export var sprite2 : Sprite2D
 @export var battle_cry : AudioStreamPlayer
@@ -30,9 +29,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(!body.name.begins_with("Slingshot") && !body.name.begins_with("red") && !body.name.begins_with("Trajectory")):
-		print(body)
 		hurt_cry.play()
 		sprite.show()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.x = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 		time = true

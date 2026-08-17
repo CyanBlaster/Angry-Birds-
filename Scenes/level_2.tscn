@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfgjhuxph7j5h"]
+
+[ext_resource type="Texture2D" uid="uid://ceda4nir3yplt" path="res://Sprites/Mobile - Angry Birds - Backgrounds - Poached Eggs Theme 1.png" id="1_2mgoq"]
+[ext_resource type="PackedScene" uid="uid://b3ji4ob2114ol" path="res://Scenes/ground.tscn" id="2_uhnj4"]
+[ext_resource type="PackedScene" uid="uid://7gsstb7qp2lq" path="res://Scenes/slingshot.tscn" id="3_42uki"]
+[ext_resource type="PackedScene" uid="uid://b5w16ahoy6y05" path="res://Scenes/wood_block.tscn" id="4_t7v2y"]
+[ext_resource type="PackedScene" uid="uid://cjonp5x0ttfkx" path="res://Scenes/small_wood_block.tscn" id="5_ait6c"]
+[ext_resource type="PackedScene" uid="uid://ck8sqji1mj0pt" path="res://Scenes/pig.tscn" id="6_vcilj"]
+[ext_resource type="PackedScene" uid="uid://dnwj071dibdaj" path="res://Scenes/triangle_wood_block.tscn" id="7_bl0du"]
+[ext_resource type="AudioStream" uid="uid://83eyqgbsrvo8" path="res://Sounds/level start military a1.mp3" id="8_q0ycs"]
+[ext_resource type="PackedScene" uid="uid://dsaldam1q1kgy" path="res://Scenes/wall.tscn" id="9_uhnj4"]
+[ext_resource type="PackedScene" uid="uid://cubd7kam25dto" path="res://Scenes/other_triangle_wood_block.tscn" id="10_42uki"]
+
+[node name="level_2" type="Node2D"]
+
+[node name="sky" type="Sprite2D" parent="."]
+position = Vector2(574.8334, 304.5)
+scale = Vector2(2.359864, 2.3433335)
+texture = ExtResource("1_2mgoq")
+region_enabled = true
+region_rect = Rect2(48, 145, 490, 300)
+
+[node name="ground" parent="." instance=ExtResource("2_uhnj4")]
+
+[node name="Slingshot" parent="." instance=ExtResource("3_42uki")]
+position = Vector2(190, 502)
+
+[node name="wood" parent="." instance=ExtResource("4_t7v2y")]
+position = Vector2(999, 526)
+
+[node name="wood3" parent="." instance=ExtResource("4_t7v2y")]
+position = Vector2(1024, 526)
+
+[node name="wood2" parent="." instance=ExtResource("4_t7v2y")]
+position = Vector2(1012, 418)
+rotation = 1.5707964
+
+[node name="small wood block" parent="." instance=ExtResource("5_ait6c")]
+position = Vector2(779, 540)
+rotation = 1.5707964
+
+[node name="small wood block3" parent="." instance=ExtResource("5_ait6c")]
+position = Vector2(801, 541)
+rotation = 1.5707964
+
+[node name="small wood block2" parent="." instance=ExtResource("5_ait6c")]
+position = Vector2(789, 447)
+
+[node name="Pig" parent="." instance=ExtResource("6_vcilj")]
+position = Vector2(1009, 385)
+
+[node name="Pig2" parent="." instance=ExtResource("6_vcilj")]
+position = Vector2(786, 416)
+
+[node name="triangle_wood_block" parent="." instance=ExtResource("7_bl0du")]
+position = Vector2(822, 438)
+
+[node name="triangle_wood_block2" parent="." instance=ExtResource("7_bl0du")]
+position = Vector2(1037, 408)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_q0ycs")
+autoplay = true
+
+[node name="wall" parent="." instance=ExtResource("9_uhnj4")]
+position = Vector2(-14, 0)
+
+[node name="wall2" parent="." instance=ExtResource("9_uhnj4")]
+position = Vector2(1160, -2)
+
+[node name="other_triangle_wood_block" parent="." instance=ExtResource("10_42uki")]
+position = Vector2(755, 437)
+
+[node name="other_triangle_wood_block2" parent="." instance=ExtResource("10_42uki")]
+position = Vector2(982, 408)

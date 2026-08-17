@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3x6ypy31qdy5"]
+[gd_scene load_steps=12 format=3 uid="uid://b3x6ypy31qdy5"]
 
 [ext_resource type="Texture2D" uid="uid://ceda4nir3yplt" path="res://Sprites/Mobile - Angry Birds - Backgrounds - Poached Eggs Theme 1.png" id="1_8ffim"]
+[ext_resource type="Script" uid="uid://lvlr3d7s6exv" path="res://Scripts/level.gd" id="1_af3po"]
 [ext_resource type="PackedScene" uid="uid://b3ji4ob2114ol" path="res://Scenes/ground.tscn" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://7gsstb7qp2lq" path="res://Scenes/slingshot.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://byk5206d2cuo8" path="res://Scenes/red.tscn" id="4_7p6j4"]
@@ -9,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cjonp5x0ttfkx" path="res://Scenes/small_wood_block.tscn" id="7_lsmp6"]
 [ext_resource type="PackedScene" uid="uid://ck8sqji1mj0pt" path="res://Scenes/pig.tscn" id="8_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://dsaldam1q1kgy" path="res://Scenes/wall.tscn" id="9_wrinw"]
+[ext_resource type="AudioStream" uid="uid://83eyqgbsrvo8" path="res://Sounds/level start military a1.mp3" id="10_chwpn"]
 
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_af3po")
 
 [node name="sky" type="Sprite2D" parent="."]
 position = Vector2(574.8334, 304.5)
@@ -58,3 +61,7 @@ position = Vector2(849, 374)
 
 [node name="wall2" parent="." instance=ExtResource("9_wrinw")]
 position = Vector2(1162, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_chwpn")
+autoplay = true

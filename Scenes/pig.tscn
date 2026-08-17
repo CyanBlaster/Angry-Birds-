@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck8sqji1mj0pt"]
+[gd_scene load_steps=6 format=3 uid="uid://ck8sqji1mj0pt"]
 
 [ext_resource type="Texture2D" uid="uid://b5h8vrqcamdcf" path="res://Sprites/Mobile - Angry Birds - Characters & Enemies - Pigs (Tuomas Designs).png" id="1_f6dcl"]
 [ext_resource type="Script" uid="uid://bk06o1ms4jgq1" path="res://Scripts/pig.gd" id="1_rv4ua"]
+[ext_resource type="AudioStream" uid="uid://dh2mlcd6wbljr" path="res://Sounds/piglette destroyed.wav" id="3_tvyd0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rv4ua"]
 radius = 25.019993
@@ -9,10 +10,11 @@ radius = 25.019993
 [sub_resource type="CircleShape2D" id="CircleShape2D_f6dcl"]
 radius = 25.70992
 
-[node name="Pig" type="RigidBody2D"]
+[node name="Pig" type="RigidBody2D" node_paths=PackedStringArray("death")]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_rv4ua")
+death = NodePath("AudioStreamPlayer")
 
 [node name="pig" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
@@ -27,5 +29,8 @@ shape = SubResource("CircleShape2D_rv4ua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pig collision"]
 shape = SubResource("CircleShape2D_f6dcl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tvyd0")
 
 [connection signal="body_entered" from="pig collision" to="." method="_on_area_2d_body_entered"]

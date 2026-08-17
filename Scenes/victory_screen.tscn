@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2mxqffaydyyx"]
+
+[ext_resource type="Script" uid="uid://bi7tlro5uax8y" path="res://Scripts/victory_screen.gd" id="1_qyds8"]
+[ext_resource type="Texture2D" uid="uid://dnheyosg8yloq" path="res://Sprites/Browser Games - Angry Birds Tyrkisk Peber Volcano - Menus - Level Clear _ Fail Screen.png" id="1_rbj82"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r8dr5"]
+radius = 58.00862
+
+[node name="victory screen" type="Node2D"]
+script = ExtResource("1_qyds8")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(577, 322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_r8dr5")
+
+[node name="BrowserGamesAngryBirdsTyrkiskPeberVolcanoMenusLevelClearFailScreen" type="Sprite2D" parent="."]
+position = Vector2(577, 322)
+texture = ExtResource("1_rbj82")
+region_enabled = true
+region_rect = Rect2(630, 555, 120, 120)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

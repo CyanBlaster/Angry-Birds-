@@ -1,17 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjonp5x0ttfkx"]
+[gd_scene load_steps=6 format=3 uid="uid://cjonp5x0ttfkx"]
 
 [ext_resource type="Texture2D" uid="uid://u82fdwed6jjf" path="res://Sprites/Mobile - Angry Birds - Blocks - Blocks (Common).png" id="1_iw5qf"]
+[ext_resource type="Script" uid="uid://mm6xf5pq6sp2" path="res://Scripts/small_wood_block.gd" id="1_ko6vo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iw5qf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q37lg"]
 size = Vector2(162, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w1c7"]
+size = Vector2(164, 20)
+
 [node name="small wood block" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 5
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_iw5qf")
+script = ExtResource("1_ko6vo")
 
 [node name="small_wood" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q37lg")
@@ -20,3 +25,10 @@ shape = SubResource("RectangleShape2D_q37lg")
 texture = ExtResource("1_iw5qf")
 region_enabled = true
 region_rect = Rect2(312, 721, 166, 20)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4w1c7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

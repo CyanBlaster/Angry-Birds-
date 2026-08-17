@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnwj071dibdaj"]
+
+[ext_resource type="Texture2D" uid="uid://u82fdwed6jjf" path="res://Sprites/Mobile - Angry Birds - Blocks - Blocks (Common).png" id="1_3kdql"]
+[ext_resource type="Script" uid="uid://c8dpvvoo25qho" path="res://Scripts/wood_block.gd" id="1_pervn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mnw4r"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_srlbf"]
+points = PackedVector2Array(0, 0, 10, 0, 0, -10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="triangle_wood_block" type="RigidBody2D"]
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_mnw4r")
+script = ExtResource("1_pervn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("ConvexPolygonShape2D_srlbf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24, -24)
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_3kdql")
+region_enabled = true
+region_rect = Rect2(485, 886, 78, 78)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+scale = Vector2(5.3, 5.3)
+shape = SubResource("ConvexPolygonShape2D_srlbf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

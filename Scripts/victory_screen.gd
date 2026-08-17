@@ -11,10 +11,8 @@ func _process(_delta: float) -> void:
 	pass
 
 
-
-		
-
-
 func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	if(Input.is_action_just_pressed("click")):
 		global.play = true
+		print(global.level)
+		
